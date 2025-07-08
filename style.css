@@ -77,10 +77,19 @@ section {
 section h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 60px;
+    margin-bottom: 20px; /* Adjusted for subtitle */
     background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto; /* 0 top, auto horizontal, 50px bottom */
+    color: #bbb;
+    font-size: 1.1rem;
+    padding: 0 15px; /* Add some padding for smaller screens */
 }
 
 /* Header */
@@ -899,9 +908,69 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
 }
 
 /* Contact Form */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info,
+.contact-form-wrapper {
+    flex: 1;
+}
+
+.contact-info h3, .contact-form-wrapper h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    width: 25px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.contact-item a {
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color); /* General hover effect */
+}
+
+/* Specific color for WhatsApp link */
+.contact-item a[href*="wa.me"] {
+    color: #25D366; /* WhatsApp Green */
+}
+
+.contact-item a[href*="wa.me"]:hover {
+    color: #128C7E; /* Darker WhatsApp Green on hover */
+}
+
+/* Specific color for email link */
+.contact-item a[href^="mailto:"] {
+    color: var(--text-color); /* Default text color (white) */
+}
+
 #contact-form {
     max-width: 700px;
-    margin: auto;
+    width: 100%; /* Use full width of its container */
+    margin: 0; /* Remove auto margin */
 }
 
 .input-group {
@@ -917,6 +986,35 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
     border-radius: 10px;
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* Ensure consistent font size */
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Form Status Message Styling */
+#form-status {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#form-status.success {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid #22c55e;
+}
+
+#form-status.error {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid #ef4444;
 }
 
 /* Footer */
@@ -964,6 +1062,16 @@ footer {
     .about-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        width: 100%; /* Ensure both columns take full width on stacking */
     }
 }
 

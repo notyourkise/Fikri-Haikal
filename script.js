@@ -13,13 +13,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Contact form submission
     const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
+    const formStatus = document.getElementById('form-status'); // Get the status element
+
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // You can add an AJAX call here to send the form data to a server
-        // For this example, we'll just show an alert
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        const data = new FormData(contactForm);
+        
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formStatus.textContent = "Thank you for your message! It has been sent successfully.";
+                formStatus.className = 'success';
+                contactForm.reset();
+            } else {
+                // Handle server-side errors from Formspree
+                const responseData = await response.json();
+                if (Object.hasOwn(responseData, 'errors')) {
+                    formStatus.textContent = responseData["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                }
+                formStatus.className = 'error';
+            }
+        } catch (error) {
+            // Handle network errors
+            formStatus.textContent = "Oops! There was a network error. Please try again later.";
+            formStatus.className = 'error';
+        }
+        
+        // Make the status message visible
+        formStatus.style.display = 'block';
+
+        // Hide the status message after a few seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 6000);
     });
 
     // Scroll Reveal Animation
