@@ -86,13 +86,20 @@ section h2 {
 /* Header */
 header {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
-    padding: 1.5rem 0;
-    background: rgba(15, 15, 26, 0.8);
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    /* background: rgba(0, 0, 0, 0.1); */ /* Remove this line */
+    background: rgba(15, 15, 26, 0.85); /* Use a consistent background */
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header.scrolled {
+    /* This class can now be removed or left as is, it won't have a different effect */
+    background: rgba(15, 15, 26, 0.9);
 }
 
 nav {
