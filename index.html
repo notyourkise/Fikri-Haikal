@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikri Haikal - Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Fikri Haikal</div>
+            <div id="hamburger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h3>Hello, my name is</h3>
+                <h1 id="hero-name"></h1>
+                <p>I'm a <span id="typing-text"></span></p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="assets/cv-fikri-haikal.pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+                <div class="hero-social-links">
+                    <a href="https://github.com/notyourkise?tab=repositories" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/muhamaadd.fikrriii/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/fikri-haikal-8b15572a6/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=6285651384990&text&type=phone_number&app_absent=0" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:haikalariadma07@gmail.com" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/aboutme.jpg" alt="Fikri Haikal">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="assets/aboutme.jpg" alt="Fikri Haikal" class="anim-fade-in">
+                <p class="anim-rise-from-bottom">Mahasiswa aktif semester 5 di Institut Teknologi Kalimantan (ITK) dengan IPK 3.58. Berasal dari Samarinda, Kalimantan Timur, saya memiliki minat mendalam dan keahlian di bidang <strong>pemrograman dan jaringan</strong>. Selain itu, saya juga aktif terlibat dalam berbagai organisasi dan kegiatan sukarela, yang telah mengasah kemampuan kolaborasi, inisiatif, dan adaptasi saya.</p>
+            </div>
+
+            <div class="skills-section">
+                <h3>Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category anim-pan-left">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li><i class="fab fa-html5 icon-html"></i> HTML</li>
+                            <li><i class="fab fa-css3-alt icon-css"></i> CSS</li>
+                            <li><i class="fab fa-js-square icon-js"></i> JavaScript</li>
+                            <li><i class="fab fa-python icon-python"></i> Python</li>
+                            <li><i class="fab fa-php icon-php"></i> PHP</li>
+                            <li><i class="fas fa-database icon-sql"></i> SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category anim-rise-up">
+                        <h4>Frameworks & Libraries</h4>
+                        <ul>
+                            <li><i class="fab fa-react icon-react"></i> React</li>
+                            <li><i class="fab fa-node-js icon-node"></i> Node.js</li>
+                            <li><i class="devicon-express-original"></i> Express.js</li>
+                            <li><i class="fab fa-laravel icon-laravel"></i> Laravel</li>
+                            <li><i class="fab fa-bootstrap icon-bootstrap"></i> Bootstrap</li>
+                            <li><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
+                            <li><i class="fas fa-code icon-alpine"></i> Alpine.js</li>
+                            <li><i class="fas fa-cube icon-filament"></i> Filament</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category anim-rise-up">
+                        <h4>Databases & Tools</h4>
+                        <ul>
+                            <li><i class="devicon-mysql-plain-wordmark"></i> MySQL</li>
+                            <li><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
+                            <li><i class="devicon-git-plain colored"></i> Git</li>
+                            <li><i class="fab fa-github"></i> GitHub</li>
+                            <li><i class="devicon-jira-plain colored"></i> Jira</li>
+                            <li><i class="fas fa-file-word icon-word"></i> Word</li>
+                            <li><i class="fas fa-file-excel icon-excel"></i> Excel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category anim-pan-right">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li><i class="fas fa-comments icon-comm"></i> Communication</li>
+                            <li><i class="fas fa-users icon-team"></i> Teamwork</li>
+                            <li><i class="fas fa-lightbulb icon-problem"></i> Problem Solving</li>
+                            <li><i class="fas fa-clock icon-time"></i> Time Management</li>
+                            <li><i class="fas fa-cogs icon-adapt"></i> Adaptability</li>
+                            <li><i class="fas fa-brain icon-critical"></i> Critical Thinking</li>
+                            <li><i class="fas fa-seedling icon-growth"></i> Growth Mindset</li>
+                            <li><i class="fas fa-eye icon-detail"></i> Attention to Detail</li>
+                            <li><i class="fas fa-user-tie icon-leader"></i> Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1: Swampt House -->
+                <div class="project-card anim-rise" 
+                     data-title="Swampt House" 
+                     data-description="A promotional website for a coffee shop called Rumah Rawa, designed to be modern, responsive, and user-friendly."
+                     data-tools="html,css,javascript">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>Swampt House</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/project/rawa.png" alt="Swampt House Project Thumbnail">
+                    </div>
+                    <p>A promotional website for a coffee shop called Rumah Rawa.</p>
+                    <div class="project-footer">
+                        <a href="https://notyourkise.github.io/SwamptHouse/" class="btn" target="_blank">View Project</a>
+                        <span class="status-badge status-online" title="This project is live."><i class="fas fa-check-circle"></i> Online</span>
+                    </div>
+                </div>
+                <!-- Project 2: Calactus -->
+                <div class="project-card anim-rise"
+                     data-title="Calactus"
+                     data-description="A responsive and interactive e-commerce website for selling various types of cacti. Features include a product catalog, shopping cart, and a clean user interface."
+                     data-tools="html,css,javascript">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>Calactus</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/aboutme.jpg" alt="Calactus Project Thumbnail">
+                    </div>
+                    <p>A responsive and interactive e-commerce website for selling various types of cacti.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Project</a>
+                        <span class="status-badge status-online" title="This project is live."><i class="fas fa-check-circle"></i> Online</span>
+                    </div>
+                </div>
+                <!-- Project 3: SmartbizAdmin -->
+                <div class="project-card anim-rise"
+                     data-title="SmartbizAdmin"
+                     data-description="An admin dashboard for business management, built with a modern stack for robust functionality."
+                     data-tools="react,express,bootstrap,tailwind,postgresql">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>SmartbizAdmin</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/project/smartbiz.png" alt="SmartbizAdmin Project Thumbnail">
+                    </div>
+                    <p>An admin dashboard for business management, built with the TALL stack for robust functionality.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Project</a>
+                        <span class="status-badge status-offline" title="This project is not live."><i class="fas fa-times-circle"></i> Offline</span>
+                    </div>
+                </div>
+                <!-- Project 4: WeatherBase -->
+                <div class="project-card anim-rise"
+                     data-title="WeatherBase"
+                     data-description="A web application that provides real-time weather forecasts using a public API. It features a dynamic UI that changes based on the weather conditions."
+                     data-tools="react,javascript,css">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>WeatherBase</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/project/weatherbase.png" alt="WeatherBase Project Thumbnail">
+                    </div>
+                    <p>A web application that provides real-time weather forecasts using a public API.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Project</a>
+                        <span class="status-badge status-online" title="This project is live."><i class="fas fa-check-circle"></i> Online</span>
+                    </div>
+                </div>
+                <!-- Project 5: MyTickets -->
+                <div class="project-card anim-rise"
+                     data-title="MyTickets"
+                     data-description="A website for booking concert tickets, featuring seat selection and an online payment simulation. Built with native PHP and MySQL for the backend."
+                     data-tools="php,mysql,javascript,css">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>MyTickets</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/aboutme.jpg" alt="MyTickets Project Thumbnail">
+                    </div>
+                    <p>A website for booking concert tickets, featuring seat selection and online payment.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Project</a>
+                        <span class="status-badge status-offline" title="This project is not live."><i class="fas fa-times-circle"></i> Offline</span>
+                    </div>
+                </div>
+                <!-- Project 6: Ariadma Tour & Travels -->
+                <div class="project-card anim-rise"
+                     data-title="Ariadma Tour & Travels"
+                     data-description="A promotional website for a travel agency designed entirely using Canva, showcasing tour packages and destinations with an engaging and responsive layout."
+                     data-tools="canva">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>Ariadma Tour & Travels</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/project/ariadma.png" alt="Ariadma Tour & Travels Project Thumbnail">
+                    </div>
+                    <p>A promotional website for a travel agency, showcasing tour packages and destinations.</p>
+                    <div class="project-footer">
+                        <a href="https://ariadmatravel.my.canva.site/" class="btn">View Project</a>
+                        <span class="status-badge status-online" title="This project is live."><i class="fas fa-check-circle"></i> Online</span>
+                    </div>
+                </div>
+                <!-- Project 7: JendelaSekolah -->
+                <div class="project-card anim-rise"
+                     data-title="JendelaSekolah"
+                     data-description="A comprehensive school profile website with features for news, events, and photo galleries. Developed using Laravel and Bootstrap for a solid and reliable platform."
+                     data-tools="laravel,bootstrap,php,mysql">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>JendelaSekolah</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/aboutme.jpg" alt="JendelaSekolah Project Thumbnail">
+                    </div>
+                    <p>A comprehensive school profile website with features for news, events, and galleries.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Project</a>
+                        <span class="status-badge status-offline" title="This project is not live."><i class="fas fa-times-circle"></i> Offline</span>
+                    </div>
+                </div>
+                <!-- Project 8: IT Support -->
+                <div class="project-card anim-rise"
+                     data-title="IT Support"
+                     data-description="Providing comprehensive technical assistance, including CCTV and printer installation, PC assembly and setup, and network configuration for small offices or homes."
+                     data-tools="networking,hardware,troubleshooting">
+                    <i class="fas fa-info-circle project-info-icon"></i>
+                    <div class="project-header">
+                        <h3>IT Support</h3>
+                    </div>
+                    <div class="project-image-placeholder">
+                        <img src="assets/aboutme.jpg" alt="IT Support Thumbnail">
+                    </div>
+                    <p>Providing technical assistance, including CCTV and printer installation, PC setup, and network configuration.</p>
+                    <div class="project-footer">
+                        <a href="#" class="btn">View Details</a>
+                        <span class="status-badge status-offline" title="This project is not live."><i class="fas fa-times-circle"></i> Offline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="reveal">
+        <div class="container">
+            <h2>Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1st Place in National Web Design Competition</h3>
+                        <span class="date">2024</span>
+                        <p>Won first place in a prestigious national competition by designing and developing a fully functional e-commerce website from scratch.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Finalist in University Hackathon</h3>
+                        <span class="date">2023</span>
+                        <p>Reached the final round by creating an innovative mobile application prototype that solves a local community problem within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="reveal">
+        <div class="container">
+            <h2>Organizational Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Head of IT Division</h3>
+                        <span class="date">2023 - Present</span>
+                        <h4>University Tech Club</h4>
+                        <p>Leading a team of 10 to manage the club's website, organize coding workshops, and develop internal software projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Staff of Creative Design</h3>
+                        <span class="date">2022 - 2023</span>
+                        <h4>Student Executive Board</h4>
+                        <p>Responsible for creating all visual branding and promotional materials for major university events, including posters, banners, and social media content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="reveal">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="project-grid">
+                <div class="project-card glass-card">
+                    <h3>Certified Web Developer</h3>
+                    <span class="date">2024</span>
+                    <p>Issued by a well-known authority, validating expertise in modern web development practices.</p>
+                </div>
+                <div class="project-card glass-card">
+                    <h3>Agile Foundations</h3>
+                    <span class="date">2023</span>
+                    <p>Certified in Agile methodologies, demonstrating proficiency in iterative development and project management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-comment-dots"></i>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/notyourkise?tab=repositories" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/muhamaadd.fikrriii/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/fikri-haikal-8b15572a6/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=6285651384990&text&type=phone_number&app_absent=0" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:haikalariadma07@gmail.com" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Fikri Haikal. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div class="modal-separator"></div>
+            <p id="modal-description"></p>
+            <h4>Tools Used:</h4>
+            <div id="modal-tools" class="tools-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
