@@ -743,6 +743,18 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
     font-size: 0.95rem;
 }
 
+.project-card p small {
+    color: #ffa500;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 5px;
+    border-left: 3px solid #ffa500;
+}
+
 .project-footer {
     display: flex;
     justify-content: space-between;
@@ -761,7 +773,7 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    overflow: hidden; /* Disable scroll */
     background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -776,22 +788,25 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
 
 .modal-content {
     background: rgba(255, 255, 255, 0.1);
-    margin: 15% auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     width: 80%;
     max-width: 600px;
+    max-height: 80vh;
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    transform: scale(0.95);
+    overflow-y: auto;
     transition: transform 0.3s ease;
 }
 
 .modal.show .modal-content {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .close-button {
@@ -898,8 +913,9 @@ nav ul li:nth-child(7) { animation-delay: 1.4s; }
 @media (max-width: 768px) {
     .modal-content {
         width: 90%;
-        margin: 25% auto;
+        max-width: 90%;
         padding: 20px;
+        max-height: 90vh;
     }
 
     #modal-title {
