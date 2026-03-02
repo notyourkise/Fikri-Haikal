@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-color: #121212;
-    /* Solid, modern dark background */
-    --surface-color: #1e1e1e;
-    /* Slightly lighter for cards/sections */
-    --text-color: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --primary-color: #5c6bc0;
-    /* Muted indigo accent */
-    --secondary-color: #3949ab;
-    --glass-bg: rgba(30, 30, 30, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.05);
+    --black: #000000;
+    --prussian-blue: #14213d;
+    --orange: #ca6702;
+    --alabaster: #e5e5e5;
+    --white: #ffffff;
 }
 
 * {
@@ -20,23 +14,27 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.7;
-    overflow-x: hidden;
-    /* Removed cursor: none */
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--black);
+    color: var(--alabaster);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
 
-
-/* General & Container */
+/* ==================== */
+/* General & Container  */
+/* ==================== */
 h1,
 h2,
 h3,
 h4 {
     font-weight: 600;
+    color: var(--white);
 }
 
 .container {
@@ -47,47 +45,45 @@ h4 {
 }
 
 section {
-    padding: 80px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #fff;
-    /* Solid white instead of gradient */
+    color: var(--white);
 }
 
 .section-subtitle {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 50px auto;
-    /* 0 top, auto horizontal, 50px bottom */
-    color: #bbb;
+    color: var(--alabaster);
     font-size: 1.1rem;
     padding: 0 15px;
-    /* Add some padding for smaller screens */
 }
 
-/* Header */
+/* ==================== */
+/* Header & Navigation  */
+/* ==================== */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 5%;
-    background: rgba(18, 18, 18, 0.85);
-    /* Match new bg-color */
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
     transition: background 0.3s;
-    border-bottom: 1px solid var(--glass-border);
-    /* Subtle separator */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 header.scrolled {
-    background: rgba(18, 18, 18, 0.95);
+    background: rgba(0, 0, 0, 0.95);
 }
 
 nav {
@@ -102,19 +98,9 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    animation: panInFromLeft 1s ease-out forwards;
-}
-
-@keyframes panInFromLeft {
-    from {
-        transform: translateX(-150%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    color: var(--orange);
+    text-decoration: none;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 nav ul {
@@ -124,18 +110,18 @@ nav ul {
 
 nav ul li {
     margin-left: 30px;
-    animation: navLinkFade 0.5s ease forwards;
+    animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
-    transform: translateY(20px);
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--alabaster);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding-bottom: 5px;
     position: relative;
     transition: color 0.3s ease;
+    font-weight: 400;
 }
 
 nav a::after {
@@ -146,13 +132,13 @@ nav a::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--primary-color);
+    background-color: var(--orange);
     transition: width 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-    color: #fff;
+    color: var(--white);
 }
 
 nav a:hover::after,
@@ -160,7 +146,12 @@ nav a.active::after {
     width: 100%;
 }
 
-@keyframes navLinkFade {
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -168,51 +159,50 @@ nav a.active::after {
 }
 
 nav ul li:nth-child(1) {
-    animation-delay: 0.2s;
+    animation-delay: 0.1s;
 }
 
 nav ul li:nth-child(2) {
-    animation-delay: 0.4s;
+    animation-delay: 0.2s;
 }
 
 nav ul li:nth-child(3) {
-    animation-delay: 0.6s;
+    animation-delay: 0.3s;
 }
 
 nav ul li:nth-child(4) {
-    animation-delay: 0.8s;
+    animation-delay: 0.4s;
 }
 
 nav ul li:nth-child(5) {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 nav ul li:nth-child(6) {
-    animation-delay: 1.2s;
+    animation-delay: 0.6s;
 }
 
 nav ul li:nth-child(7) {
-    animation-delay: 1.4s;
+    animation-delay: 0.7s;
 }
 
-/* Hamburger Menu */
+/* ==================== */
+/* Hamburger Menu       */
+/* ==================== */
 #hamburger-menu {
     display: none;
-    /* Hidden on desktop */
     cursor: pointer;
     z-index: 1001;
-    /* Ensure it's above the nav background */
 }
 
 #hamburger-menu div {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: var(--white);
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-/* Hamburger Animation (Toggle Class) */
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -225,21 +215,17 @@ nav ul li:nth-child(7) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-
-/* Hero Section */
+/* ==================== */
+/* Hero Section         */
+/* ==================== */
 #hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    /* text-align: center; */
-    /* Remove this */
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background-color: var(--black);
     position: relative;
-    /* Needed for pseudo-element positioning */
-    border-bottom: none;
-    /* Remove hard border line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     padding: 140px 5% 0;
-    /* Increased top padding */
 }
 
 .hero-container {
@@ -250,42 +236,40 @@ nav ul li:nth-child(7) {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    /* Ensure content is above the fade effect */
-    z-index: 3;
 }
 
 .hero-text {
     flex: 1;
     text-align: left;
-    animation: panInFromLeft 1s ease-out 0.5s forwards;
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
     opacity: 0;
+}
+
+.hero-text h3 {
+    color: var(--alabaster);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .hero-text h1 {
     font-size: 3.5rem;
-    /* Adjust size */
-    margin-bottom: 20px;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    color: var(--white);
     line-height: 1.2;
 }
 
 .hero-text p {
     font-size: 1.3rem;
-    /* Adjust size */
     margin-bottom: 30px;
-    color: #aaa;
+    color: var(--alabaster);
 }
 
 #typing-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    color: var(--orange);
+    font-weight: 600;
 }
 
 .hero-social-links {
@@ -293,11 +277,10 @@ nav ul li:nth-child(7) {
 }
 
 .hero-social-links a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    /* Slightly smaller than footer icons */
+    color: var(--alabaster);
+    font-size: 1.4rem;
     margin-right: 20px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .hero-social-links a:last-child {
@@ -305,8 +288,7 @@ nav ul li:nth-child(7) {
 }
 
 .hero-social-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
+    color: var(--orange);
 }
 
 .hero-image {
@@ -314,107 +296,74 @@ nav ul li:nth-child(7) {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: panInFromRight 1s ease-out 0.5s forwards;
+    animation: fadeInUp 0.8s ease-out 0.5s forwards;
     opacity: 0;
 }
 
-@keyframes panInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 .hero-image img {
-    max-width: 350px;
+    max-width: 320px;
     width: 100%;
     border-radius: 50%;
-    /* Make it a circle */
-    border: 5px solid var(--primary-color);
-    /* Add border back */
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
-    height: 350px;
-    /* Ensure it's a perfect circle */
+    border: 3px solid var(--orange);
+    height: 320px;
     object-fit: cover;
-    /* Prevent image stretching */
 }
 
-/* Add this for the smooth transition effect */
-#hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    /* Height of the fade effect */
-    background: linear-gradient(to top, var(--bg-color), transparent);
-    z-index: 2;
-}
-
-/* Remove old .hero-content styles */
-/* .hero-content { ... } */
-/* .hero-content h1 { ... } */
-/* .hero-content p { ... } */
-
+/* ==================== */
+/* Buttons              */
+/* ==================== */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 50px;
-    color: #fff;
-    background-image: var(--gradient-primary);
-    background-size: 200% auto;
-    transition: all 0.4s ease;
+    border-radius: 6px;
+    color: var(--black);
+    background-color: var(--orange);
+    transition: all 0.3s ease;
     border: none;
     font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-position: right center;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--primary-color);
+    background-color: #e8950f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(252, 163, 17, 0.3);
 }
 
 .hero-buttons {
     display: flex;
     gap: 15px;
-    /* Adds space between the buttons */
     margin-bottom: 25px;
-    /* Adds space below the buttons before the social links */
 }
 
 .btn-secondary {
     background: transparent;
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
+    border: 1px solid var(--alabaster);
+    color: var(--alabaster);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    transform: translateY(-2px);
+    border-color: var(--orange);
+    color: var(--orange);
+    background: transparent;
+    box-shadow: none;
 }
 
+/* ==================== */
+/* Cards (Shared)       */
+/* ==================== */
 .glass-card {
-    background: var(--surface-color);
+    background: var(--prussian-blue);
     border-radius: 12px;
     padding: 30px;
-    border: 1px solid var(--glass-border);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.glass-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-}
-
-/* About Me */
+/* ==================== */
+/* About Me             */
+/* ==================== */
 .about-content {
     display: flex;
     align-items: center;
@@ -425,11 +374,13 @@ nav ul li:nth-child(7) {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid var(--primary-color);
-    padding: 5px;
+    border: 2px solid var(--orange);
+    padding: 4px;
 }
 
-/* Simplified Animation for Sections */
+/* ==================== */
+/* Scroll Reveal        */
+/* ==================== */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -441,82 +392,39 @@ nav ul li:nth-child(7) {
     transform: translateY(0);
 }
 
-/* Removed individual staggered animations for a cleaner feel */
-
-/* Add transition delays for staggered effect */
-.reveal.visible .about-content .anim-rise-from-bottom {
-    transition-delay: 0.2s;
+/* ==================== */
+/* Skills               */
+/* ==================== */
+.skills-section h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-.reveal.visible .skills-grid .anim-pan-left {
-    transition-delay: 0.4s;
-}
-
-.reveal.visible .skills-grid .anim-rise-up:nth-of-type(2) {
-    transition-delay: 0.6s;
-}
-
-.reveal.visible .skills-grid .anim-rise-up:nth-of-type(3) {
-    transition-delay: 0.8s;
-}
-
-.reveal.visible .skills-grid .anim-pan-right {
-    transition-delay: 1s;
-}
-
-/* Staggered delay for project cards */
-.reveal.visible .project-card.anim-rise:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(3) {
-    transition-delay: 0.6s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(4) {
-    transition-delay: 0.8s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(5) {
-    transition-delay: 1.0s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(6) {
-    transition-delay: 1.2s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(7) {
-    transition-delay: 1.4s;
-}
-
-.reveal.visible .project-card.anim-rise:nth-child(8) {
-    transition-delay: 1.6s;
-}
-
-
-/* Skills */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .skill-category {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 20px;
+    background: var(--prussian-blue);
+    padding: 24px;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: rgba(202, 103, 2, 0.3);
 }
 
 .skill-category h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid;
-    border-image: var(--gradient-primary) 1;
+    border-bottom: 2px solid var(--orange);
     padding-bottom: 10px;
+    color: var(--white);
 }
 
 .skill-category ul {
@@ -525,30 +433,26 @@ nav ul li:nth-child(7) {
 
 .skill-category ul li {
     margin-bottom: 10px;
+    color: var(--alabaster);
+    transition: color 0.3s ease;
 }
 
 .skill-category ul li i {
-    margin-right: 15px;
+    margin-right: 12px;
     width: 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.skill-category ul li:hover {
+    color: var(--white);
 }
 
 .skill-category ul li:hover i {
-    transform: scale(1.2) rotate(-10deg);
-    text-shadow: 0 0 15px currentColor;
+    color: var(--orange);
 }
 
-.skill-category ul li .icon-postman svg {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 11px;
-    fill: #FF6C37;
-    /* Postman Orange */
-}
-
-/* Skill Icon Colors */
+/* Skill Icon Colors — original brand colors */
 .icon-html {
     color: #E34F26;
 }
@@ -589,6 +493,10 @@ nav ul li:nth-child(7) {
     color: #7952B3;
 }
 
+.icon-filament {
+    color: #FF2D20;
+}
+
 .icon-word {
     color: #2B579A;
 }
@@ -597,11 +505,9 @@ nav ul li:nth-child(7) {
     color: #1D6F42;
 }
 
-.icon-filament {
-    color: #FF2D20;
+.icon-alpine {
+    color: #8BC0D0;
 }
-
-/* Using Laravel's color as it's in the ecosystem */
 
 .icon-comm,
 .icon-team,
@@ -612,10 +518,12 @@ nav ul li:nth-child(7) {
 .icon-growth,
 .icon-detail,
 .icon-leader {
-    color: var(--accent-color);
+    color: var(--orange);
 }
 
-/* Timeline for Achievements & Experience */
+/* ==================== */
+/* Timeline             */
+/* ==================== */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -625,13 +533,12 @@ nav ul li:nth-child(7) {
 .timeline::after {
     content: '';
     position: absolute;
-    width: 4px;
-    background-image: linear-gradient(to bottom, var(--primary-color), var(--accent-color), var(--primary-color));
+    width: 2px;
+    background-color: var(--orange);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -2px;
-    border-radius: 2px;
+    margin-left: -1px;
 }
 
 .timeline-item {
@@ -639,7 +546,7 @@ nav ul li:nth-child(7) {
     position: relative;
     width: 50%;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -659,87 +566,98 @@ nav ul li:nth-child(7) {
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 24px;
-    height: 24px;
-    right: -14px;
-    background-color: var(--bg-color);
-    border: 4px solid var(--accent-color);
+    width: 14px;
+    height: 14px;
+    right: -9px;
+    background-color: var(--black);
+    border: 3px solid var(--orange);
     top: 25px;
     border-radius: 50%;
     z-index: 1;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px var(--accent-color);
+    transition: background-color 0.3s ease;
 }
 
 .timeline-item:nth-child(even)::after {
-    left: -10px;
+    left: -5px;
 }
 
 .timeline-item:hover::after {
-    transform: scale(1.2);
-    box-shadow: 0 0 25px var(--accent-color);
+    background-color: var(--orange);
 }
 
 .timeline-content {
-    padding: 20px 30px;
+    padding: 20px 25px;
     position: relative;
-    background: rgba(39, 39, 62, 0.5);
-    backdrop-filter: blur(10px);
+    background: var(--prussian-blue);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease;
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
+    border-color: var(--orange);
 }
 
-/* Projects */
+.timeline-content h3 {
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.timeline-content h4 {
+    font-size: 0.9rem;
+    color: var(--alabaster);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.timeline-content .date {
+    color: var(--orange);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.timeline-content p {
+    color: var(--alabaster);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* ==================== */
+/* Projects             */
+/* ==================== */
 .project-grid {
     display: grid;
-    /* Adjust columns for 7 items. This will create 3 columns on large screens, 2 on medium, 1 on small */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .project-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
+    background: var(--prussian-blue);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
     padding: 25px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
     position: relative;
-    /* Needed for icon positioning */
     overflow: hidden;
-    /* Hide overflowing elements from animations */
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(138, 43, 226, 0.5);
 }
 
 .project-header {
-    /* We can simplify this as it no longer needs flexbox */
     padding-bottom: 10px;
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .project-header h3 {
     margin: 0;
-    font-size: 1.4rem;
-    color: #fff;
+    font-size: 1.3rem;
+    color: var(--white);
 }
 
-/* Status Badge Styles */
+/* Status Badge */
 .status-badge {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     padding: 4px 12px;
     border-radius: 50px;
     font-weight: 500;
@@ -751,36 +669,30 @@ nav ul li:nth-child(7) {
 }
 
 .status-badge.status-online {
-    background-color: rgba(22, 163, 74, 0.2);
-    color: #22c55e;
-    /* Green-500 */
+    background-color: rgba(22, 163, 74, 0.15);
+    color: #4ade80;
 }
 
 .status-badge.status-offline {
-    background-color: rgba(220, 38, 38, 0.2);
-    color: #dc2626;
-    /* Red-600 */
+    background-color: rgba(220, 38, 38, 0.15);
+    color: #f87171;
 }
 
+/* Project Info Icon */
 .project-info-icon {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 1.3rem;
-    color: var(--accent-color);
+    font-size: 1.2rem;
+    color: var(--orange);
     cursor: help;
-    transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-info-icon {
-    transform: scale(1.2);
-}
-
+/* Project Image */
 .project-image-placeholder {
     width: 100%;
     height: 170px;
-    /* Increased height for better visuals */
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     margin-bottom: 15px;
 }
@@ -789,31 +701,25 @@ nav ul li:nth-child(7) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.project-card:hover .project-image-placeholder img {
-    transform: scale(1.1);
-    filter: brightness(1.1);
 }
 
 .project-card p {
     flex-grow: 1;
     margin-bottom: 20px;
-    color: #ccc;
-    font-size: 0.95rem;
+    color: var(--alabaster);
+    font-size: 0.9rem;
 }
 
 .project-card p small {
-    color: #ffa500;
+    color: var(--orange);
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
     display: block;
     margin-top: 8px;
-    padding: 5px 10px;
-    background: rgba(255, 165, 0, 0.1);
+    padding: 6px 10px;
+    background: rgba(252, 163, 17, 0.08);
     border-radius: 5px;
-    border-left: 3px solid #ffa500;
+    border-left: 3px solid var(--orange);
 }
 
 .project-footer {
@@ -821,29 +727,33 @@ nav ul li:nth-child(7) {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    /* Pushes the footer to the bottom */
 }
 
-/* ------------------ */
-/* Modal Styling */
-/* ------------------ */
+/* Certification Image */
+.cert-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.cert-btn {
+    margin-top: auto;
+}
+
+/* ==================== */
+/* Modal                */
+/* ==================== */
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
-    z-index: 1000;
-    /* Sit on top */
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: hidden;
-    /* Disable scroll */
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     opacity: 0;
@@ -856,20 +766,17 @@ nav ul li:nth-child(7) {
 }
 
 .modal-content {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--prussian-blue);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.95);
     padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 80%;
     max-width: 600px;
     max-height: 80vh;
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
     overflow-y: auto;
     transition: transform 0.3s ease;
 }
@@ -879,7 +786,7 @@ nav ul li:nth-child(7) {
 }
 
 .close-button {
-    color: #aaa;
+    color: var(--alabaster);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -888,33 +795,33 @@ nav ul li:nth-child(7) {
 
 .close-button:hover,
 .close-button:focus {
-    color: var(--primary-color);
+    color: var(--orange);
     text-decoration: none;
     cursor: pointer;
 }
 
 #modal-title {
     margin-top: 0;
-    color: var(--text-color);
-    font-size: 2rem;
+    color: var(--white);
+    font-size: 1.8rem;
 }
 
 .modal-separator {
     width: 100%;
     height: 2px;
-    background: var(--gradient-bar);
+    background: var(--orange);
     margin: 15px 0;
     border-radius: 1px;
 }
 
 #modal-description {
-    color: var(--text-color-secondary);
-    font-size: 1.1rem;
-    line-height: 1.6;
+    color: var(--alabaster);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .modal-content h4 {
-    color: var(--text-color);
+    color: var(--white);
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -922,37 +829,30 @@ nav ul li:nth-child(7) {
 .tools-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 .tools-list .tool-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
     padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: var(--text-color);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--alabaster);
+    transition: background-color 0.2s ease;
 }
 
 .tools-list .tool-item:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    cursor: default;
-}
-
-.tools-list .tool-item:hover i {
-    animation: icon-spin 0.5s ease-in-out;
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .tools-list .tool-item i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    font-size: 1.3rem;
 }
 
-/* Add specific colors for Font Awesome icons if needed */
+/* Tool icon brand colors */
 .tools-list .tool-item .fa-html5 {
     color: #E34F26;
 }
@@ -965,14 +865,6 @@ nav ul li:nth-child(7) {
     color: #F7DF1E;
 }
 
-.tools-list .tool-item .fa-laravel {
-    color: #FF2D20;
-}
-
-.tools-list .tool-item .fa-php {
-    color: #777BB4;
-}
-
 .tools-list .tool-item .fa-react {
     color: #61DAFB;
 }
@@ -981,16 +873,42 @@ nav ul li:nth-child(7) {
     color: #7952B3;
 }
 
+.tools-list .tool-item .fa-php {
+    color: #777BB4;
+}
+
+.tools-list .tool-item .fa-laravel {
+    color: #FF2D20;
+}
+
+.tools-list .tool-item .fa-network-wired {
+    color: #4FC3F7;
+}
+
+.tools-list .tool-item .fa-cogs {
+    color: #90A4AE;
+}
+
+.tools-list .tool-item .fa-wrench {
+    color: #FF8F00;
+}
+
+.tools-list .tool-item .fa-palette {
+    color: #0052CC;
+}
+
 .tools-list .tool-item .fa-database {
     color: #4479A1;
 }
 
-/* Devicon specific colors */
+.tools-list .tool-item .devicon-mysql-plain-wordmark {
+    color: #4479A1;
+}
+
 .tools-list .tool-item .devicon-express-original {
     color: #68A063;
 }
 
-/* Express doesn't have a strong brand color, using a generic one */
 .tools-list .tool-item .devicon-tailwindcss-plain {
     color: #38B2AC;
 }
@@ -999,33 +917,9 @@ nav ul li:nth-child(7) {
     color: #336791;
 }
 
-
-@keyframes icon-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-/* Modal Responsive */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 90%;
-        max-width: 90%;
-        padding: 20px;
-        max-height: 90vh;
-    }
-
-    #modal-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* Contact Form */
+/* ==================== */
+/* Contact Section      */
+/* ==================== */
 .contact-wrapper {
     display: flex;
     gap: 50px;
@@ -1039,13 +933,9 @@ nav ul li:nth-child(7) {
 
 .contact-info h3,
 .contact-form-wrapper h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
-    color: #fff;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--orange);
 }
 
 .contact-item {
@@ -1053,51 +943,30 @@ nav ul li:nth-child(7) {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
-    color: var(--accent-color);
+    font-size: 1.3rem;
+    color: var(--orange);
     width: 25px;
-    /* Fixed width for alignment */
     text-align: center;
 }
 
 .contact-item a {
+    color: var(--alabaster);
     text-decoration: none;
-    /* Remove underline */
     transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-    color: var(--accent-color);
-    /* General hover effect */
-}
-
-/* Specific color for WhatsApp link */
-.contact-item a[href*="wa.me"] {
-    color: #25D366;
-    /* WhatsApp Green */
-}
-
-.contact-item a[href*="wa.me"]:hover {
-    color: #128C7E;
-    /* Darker WhatsApp Green on hover */
-}
-
-/* Specific color for email link */
-.contact-item a[href^="mailto:"] {
-    color: var(--text-color);
-    /* Default text color (white) */
+    color: var(--orange);
 }
 
 #contact-form {
     max-width: 700px;
     width: 100%;
-    /* Use full width of its container */
     margin: 0;
-    /* Remove auto margin */
 }
 
 .input-group {
@@ -1105,68 +974,102 @@ nav ul li:nth-child(7) {
     margin-bottom: 20px;
 }
 
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange);
+    opacity: 0.6;
+}
+
+.input-group:last-of-type i {
+    top: 20px;
+    transform: none;
+}
+
 #contact-form input,
 #contact-form textarea {
     width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 14px 14px 14px 45px;
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: var(--text-color);
+    border-radius: 8px;
+    color: var(--white);
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    /* Ensure consistent font size */
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+
+#contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 #contact-form button {
     width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 14px;
+    font-size: 1rem;
 }
 
-/* Form Status Message Styling */
+/* Form Status */
 #form-status {
     display: none;
-    /* Hidden by default */
-    padding: 15px;
-    margin-top: 20px;
+    padding: 12px;
+    margin-top: 15px;
     border-radius: 8px;
     font-weight: 500;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 #form-status.success {
-    background-color: rgba(34, 197, 94, 0.2);
-    color: #22c55e;
-    border: 1px solid #22c55e;
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 #form-status.error {
-    background-color: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid #ef4444;
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-/* Footer */
+/* ==================== */
+/* Footer               */
+/* ==================== */
 footer {
     text-align: center;
     padding: 40px;
-    background: #0a0a10;
+    background: var(--prussian-blue);
+}
+
+footer p {
+    color: var(--alabaster);
+    font-size: 0.85rem;
+    margin-top: 15px;
 }
 
 .social-links a {
-    color: var(--text-color);
-    font-size: 1.8rem;
-    margin: 0 15px;
-    transition: all 0.3s ease;
+    color: var(--alabaster);
+    font-size: 1.5rem;
+    margin: 0 12px;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-5px);
+    color: var(--orange);
 }
 
-/* Responsive Design */
+/* ==================== */
+/* Responsive           */
+/* ==================== */
 @media (max-width: 992px) {
     .hero-container {
         flex-direction: column;
@@ -1176,18 +1079,20 @@ footer {
     .hero-text {
         text-align: center;
         animation: none;
-        /* Disable pan-in on smaller screens */
         opacity: 1;
     }
 
     .hero-image {
         margin-top: 40px;
         animation: none;
-        /* Disable pan-in on smaller screens */
         opacity: 1;
     }
 
     .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-social-links {
         justify-content: center;
     }
 
@@ -1204,14 +1109,12 @@ footer {
     .contact-info,
     .contact-form-wrapper {
         width: 100%;
-        /* Ensure both columns take full width on stacking */
     }
 }
 
 @media (max-width: 768px) {
     header {
-        background: rgba(15, 15, 26, 0.85);
-        /* Ensure header has background on mobile */
+        background: rgba(0, 0, 0, 0.9);
     }
 
     nav ul {
@@ -1219,7 +1122,7 @@ footer {
         right: 0;
         top: 0;
         height: 100vh;
-        background: rgba(15, 15, 26, 0.95);
+        background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
@@ -1228,7 +1131,6 @@ footer {
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
         z-index: 1000;
-        /* Ensure it's below the hamburger icon but above content */
     }
 
     nav ul.nav-active {
@@ -1238,14 +1140,12 @@ footer {
     nav ul li {
         margin: 20px 0;
         opacity: 0;
-        /* Initially hidden for staggered animation */
     }
 
-    /* Staggered animation for mobile nav links */
     @keyframes navLinkFadeMobile {
         from {
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(40px);
         }
 
         to {
@@ -1255,45 +1155,43 @@ footer {
     }
 
     .nav-active li {
-        animation: navLinkFadeMobile 0.5s ease forwards;
+        animation: navLinkFadeMobile 0.4s ease forwards;
     }
 
     .nav-active li:nth-child(1) {
-        animation-delay: 0.2s;
+        animation-delay: 0.1s;
     }
 
     .nav-active li:nth-child(2) {
-        animation-delay: 0.3s;
+        animation-delay: 0.2s;
     }
 
     .nav-active li:nth-child(3) {
-        animation-delay: 0.4s;
+        animation-delay: 0.3s;
     }
 
     .nav-active li:nth-child(4) {
-        animation-delay: 0.5s;
+        animation-delay: 0.4s;
     }
 
     .nav-active li:nth-child(5) {
-        animation-delay: 0.6s;
+        animation-delay: 0.5s;
     }
 
     .nav-active li:nth-child(6) {
-        animation-delay: 0.7s;
+        animation-delay: 0.6s;
     }
 
     .nav-active li:nth-child(7) {
-        animation-delay: 0.8s;
+        animation-delay: 0.7s;
     }
-
 
     #hamburger-menu {
         display: block;
-        /* Show on tablet and mobile */
     }
 
     .hero-text h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .hero-text p {
@@ -1301,8 +1199,8 @@ footer {
     }
 
     .hero-image img {
-        max-width: 280px;
-        height: 280px;
+        max-width: 250px;
+        height: 250px;
     }
 
     section h2 {
@@ -1324,32 +1222,32 @@ footer {
     }
 
     .timeline-item::after {
-        left: 15px;
+        left: 22px;
     }
 
     .timeline-item:nth-child(even)::after {
-        left: 15px;
+        left: 22px;
     }
 
     .project-grid {
         grid-template-columns: 1fr;
     }
+
+    .modal-content {
+        width: 90%;
+        max-width: 90%;
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    #modal-title {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
-    body {
-        cursor: auto;
-        /* Revert to default cursor on mobile */
-    }
-
-    .cursor-dot,
-    .cursor-outline {
-        display: none;
-        /* Hide custom cursor on mobile */
-    }
-
     .hero-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .hero-buttons {

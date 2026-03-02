@@ -115,21 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    // Typing Text Animation for Name
-    const nameElement = document.querySelector("#hero-name");
-    const nameToType = "Muhammad Fikri Haikal Ariadma";
-    let nameCharIndex = 0;
 
-    function typeName() {
-        if (nameCharIndex < nameToType.length) {
-            nameElement.textContent += nameToType.charAt(nameCharIndex);
-            nameCharIndex++;
-            setTimeout(typeName, 100); // Adjust typing speed here
-        }
-    }
-
-    // Start the name typing animation after a delay (e.g., after the pan-in animation)
-    setTimeout(typeName, 1000); // 1 second delay
 
     // Typing Text Animation for Profession
     const typingText = document.querySelector("#typing-text");
